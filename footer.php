@@ -7,21 +7,11 @@
 	
 				<div class="row">
 	
-					<div class="col-md-3 col-sm-6 col-xs-12">
-						<?php echo "footer widget 1"; ?>
-					</div>
+					<?php get_sidebar( 'left-footer' ); ?>
 					<!-- end footer col-md-3 -->
 	
-					<div class="col-md-3 col-sm-6 col-xs-12">
-						<?php echo "footer widget 2"; ?>
-						
-					</div>
-					<!-- end footer col-md-3 -->
 					
-					<div class="col-md-6 col-sm-12 col-xs-12">
-						<?php echo "footer widget 3"; ?>
-						
-					</div>
+					<?php get_sidebar( 'right-footer' ); ?>
 					<!-- end footer col-md-6 -->
 					
 				</div>

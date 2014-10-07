@@ -36,7 +36,7 @@
 	
 			<aside class="col-md-3 main-sidebar">
 
-				<?php get_sidebar(); ?>
+				<?php get_sidebar('main-sidebar'); ?>
 
 			</aside>
 	

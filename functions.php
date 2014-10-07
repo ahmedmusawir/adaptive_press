@@ -69,7 +69,7 @@ if ( function_exists( 'register_sidebar')) {
 			'name' => __( 'Right Footer', 'adaptive-framework'),
 			'id' => 'right-footer',
 			'description' => __( 'The right footer area', 'adaptive-framework'),
-			'before_widget' => '<div class="footer-sidebar-widget col-md-3 col-sm-12 col-xs-12">',
+			'before_widget' => '<div class="footer-sidebar-widget col-md-3 col-sm-6 col-xs-12">',
 			'after_widget' => '</div> <!-- end footer-sidebar-widget -->',
 			'before_title' => '<h4>',
 			'after_title' => '</h4>'
