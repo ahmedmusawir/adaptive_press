@@ -681,7 +681,7 @@ img.centered {
   -moz-transition: all 0.3s ease-out;
   -ms-transition: all 0.3s ease-out;
   transition: all 0.3s ease-out;
-  font-size: .99em;
+  font-size: 1.1em;
   color: #2b3039;
   font-weight: bold;
   height: 6em;
@@ -702,7 +702,7 @@ img.centered {
 }
 .main-navigation ul > li ul {
   position: absolute;
-  background: white;
+  background: url('images/main-bg.jpg');
   left: -1em;
   border: 1px solid #d7d7d7;
   opacity: 0;
@@ -718,11 +718,11 @@ img.centered {
   float: none;
   white-space: nowrap;
   padding: 0 1em;
-  border-bottom: 1px solid #c4c9d2;
+  border-bottom: 1px solid #e1e3e8;
 }
 .main-navigation ul > li ul li a {
-  font-weight: normal;
-  font-size: 1em;
+  font-weight: bold;
+  font-size: .9em;
   -webkit-transition: all 0.2s ease-out;
   -o-transition: all 0.2s ease-out;
   -moz-transition: all 0.2s ease-out;
@@ -750,8 +750,7 @@ img.centered {
   visibility: visible;
 }
 .main-navigation ul > li:hover > a {
-  color: #428bca;
-  font-size: .96em;
+  color: #d70000;
 }
 /*====================================
 =            MAIN CONTENT            =

@@ -26,7 +26,7 @@
 	<![endif]-->
 
 	<!-- Favicon and Apple Icons -->
-	<link rel="shortcut icon" type="image/x-icon" href="images/icons/favicon.ico">
+	<link rel="shortcut icon" type="image/x-icon" href="<?php echo IMAGES; ?>/icons/favicon.ico">
 	<!-- <link rel="apple-touch-icon" href="images/icons/apple-touch-icon.png"> -->
 	<!-- <link rel="apple-touch-icon" sizes="72/72" href="images/icons/apple-touch-icon-72x72.png"> -->
 	<!-- <link rel="apple-touch-icon" type="114/114" href="images/icons/apple-touch-icon-114x114.png"> -->
@@ -40,29 +40,36 @@
 			<div class="container">
 
 				<nav class="top-menu-navigation clearfix">
-					<ul>
-						<li><a href="">Top Link 1</a></li>
-						<li>
-							<a href="">Dropdown</a>
-							<ul>
-								<li><a href="">Level 2 item 1</a></li>
-								<li>
-									<a href="">Level 2 item 2</a>
-									<ul>
-										<li><a href="">Level 3 item 1</a></li>
-										<li><a href="">Level 3 item 2</a></li>
-									</ul>
-								</li>
-								<li><a href="">Level 2 item 3</a></li>
-							</ul>
-						</li>
-						<li><a href="">Top link 3</a></li>
-					</ul>
+					
+					<?php    /**
+						* Displays a navigation menu
+						* @param array $args Arguments
+						*/
+						$args = array(
+							'theme_location' => 'top-menu',
+							'menu' => '',
+							'container' => 'ul',
+							'container_class' => 'menu-{menu-slug}-container',
+							'container_id' => '',
+							'menu_class' => 'menu',
+							'menu_id' => '',
+							'echo' => true,
+							'fallback_cb' => 'wp_page_menu',
+							'before' => '',
+							'after' => '',
+							'link_before' => '',
+							'link_after' => '',
+							'items_wrap' => '<ul id = "%1$s" class = "%2$s">%3$s</ul>',
+							'depth' => 0,
+							'walker' => ''
+						);
+					
+						wp_nav_menu( $args ); ?>
 
 				</nav>
 				<!-- end top-menu-navigation -->
 
-			<a href="#" class="small-button blue" id="rwd-top-nav-btn">Select a page ...</a>
+			<a href="#" class="small-button blue" id="rwd-top-nav-btn"><?php _e('Select a page ...', 'adaptive-framework') ?></a>
 			<div class="rwd-top-nav">
 			</div> <!-- end rwd-top-nav -->	
 
@@ -76,9 +83,9 @@
 			<div class="row">
 				<div class="col-md-6 logo-container">
 					<h1 class="logo">
-						<a href="">
+						<a href="<?php echo home_url(); ?>">
 							<!-- <img src="http://lorempixel.com/300/100/abstract" alt="Ad"> -->
-							<img src="images/logo.png" alt="Adaptive">
+							<img src="<?php echo IMAGES; ?>/logo.png" alt="<?php bloginfo('name' ); ?> | <?php bloginfo('description' ); ?>">
 						</a>
 					</h1>
 				</div>
@@ -88,7 +95,7 @@
 					
 					<figure class="ad-block align-right">
 						<a href="">
-							<img src="images/top-ad-block.jpg" alt="Ad">
+							<img src="<?php echo IMAGES; ?>/top-ad-block.jpg" alt="Ad">
 						</a>
 						<!-- <a href=""><img src="images/demo/ad-468x60.gif" alt="Ad"></a> -->
 					</figure>
@@ -101,33 +108,39 @@
 			<hr />
 
 			<nav class="main-navigation clearfix">
-				<ul>
-					<li><a href="index.html">Home</a></li>
-					<li>
-						<a href="">Dropdown</a>
-						<ul>
-							<li><a href="">Level 2 item 1</a></li>
-							<li>
-								<a href="">Level 2 item 2</a>
-								<ul>
-									<li><a href="">Level 3 item 1</a></li>
-									<li><a href="">Level 3 item 2</a></li>
-								</ul>
-							</li>
-							<li><a href="">Level 2 item 3</a></li>
-						</ul>
-					</li>
-					<li><a href="">Main link 3</a></li>
-				</ul>
+				<?php    /**
+					* Displays a navigation menu
+					* @param array $args Arguments
+					*/
+					$args = array(
+						'theme_location' => 'main-menu',
+						'menu' => '',
+						'container' => 'ul',
+						'container_class' => 'menu-{menu-slug}-container',
+						'container_id' => '',
+						'menu_class' => 'menu',
+						'menu_id' => '',
+						'echo' => true,
+						'fallback_cb' => 'wp_page_menu',
+						'before' => '',
+						'after' => '',
+						'link_before' => '',
+						'link_after' => '',
+						'items_wrap' => '<ul id = "%1$s" class = "%2$s">%3$s</ul>',
+						'depth' => 0,
+						'walker' => ''
+					);
+				
+					wp_nav_menu( $args ); ?>
 			</nav>
 			<!-- end main-navigation -->
 
-			<a href="#" class="button blue" id="rwd-main-nav-btn">Select a page ...</a>
+			<a href="#" class="button blue" id="rwd-main-nav-btn"><?php _e('Select a page ...', 'adaptive-framework') ?></a>
 			<div class="rwd-main-nav">
 			</div> <!-- end rwd-top-nav -->
 
 		</div>
 		<!-- end container -->
-
+	<?php wp_head(); ?>
 	</header>
 	<!-- end main-header -->
