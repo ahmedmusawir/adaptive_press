@@ -157,6 +157,54 @@ function adaptive_comments( $comment, $args, $depth ) {
 
 /*-----  End of Function to display comments  ------*/
 
+/*============================================
+=            Custom Comments Form            =
+============================================*/
+
+function adaptive_custom_comment_form( $defaults ) {
+
+	$defaults[ 'comment_notes_before' ] = '';
+	$defaults[ 'comment_notes_after' ] = '';
+	$defaults[ 'id_form' ] = 'comment-form';
+	$defaults[ 'comment_field' ] = '<p><textarea name="comment" id="comment" cols="30" rows="10"></textarea></p>';
+
+
+	return $defaults;
+}
+
+add_filter( 'comment_form_defaults', 'adaptive_custom_comment_form' );
+
+function adaptive_custom_comment_fields() {
+
+	$commenter = wp_get_current_commenter();
+	$req = get_option( 'require_name_email' );
+	$aria_req = ( $req ? "aria-required='true'" : ' ');
+
+	$fields = array(
+
+		'author' => '<p>' . '<input type="text" id="author" name="author" value="' . esc_attr($commenter['comment_author']) . '" ' . $aria_req . ' />' .
+					'<label for="author">' . __('Name', 'adaptive-framework') . ' ' . ($req ? '*' : '') . '</label>' . '</p>',
+
+		'email' => '<p>' . '<input type="text" id="email" name="email" value="' . esc_attr($commenter['comment_author_email']) . '" ' . $aria_req . ' />' .
+					'<label for="email">' . __('Email', 'adaptive-framework') . ' ' . ($req ? '*' : '') . '</label>' . '</p>',
+
+		'url' => '<p>' . '<input type="text" id="url" name="url" value="' . esc_attr($commenter['comment_author_url']) . '" ' . $aria_req . ' />' .
+					'<label for="url">' . __('Website', 'adaptive-framework') . '</label>' . '</p>',
+
+
+	);
+
+
+	return $fields;
+}
+
+add_filter( 'comment_form_default_fields', 'adaptive_custom_comment_fields' );
+
+
+/*-----  End of Custom Comments Form  ------*/
+
+
+
 
 
 
