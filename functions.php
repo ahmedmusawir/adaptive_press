@@ -15,6 +15,21 @@ define('IMAGES', THEMEROOT . '/images');
 /* Disable WordPress Admin Bar for all users but admins. */
   show_admin_bar(false);
 
+ /*===========================================================================
+ =            Add Theme Support for Post Thumbnails, Post Formats            =
+ ===========================================================================*/
+ 
+ if ( function_exists('add_theme_support') ) {
+ 	
+ 	add_theme_support('post-formats', array('link', 'quote', 'gallery') );
+
+	add_theme_support( 'post-thumbnails', array('post') );
+ }
+ 
+ /*-----  End of Add Theme Support for Post Thumbnails, Post Formats  ------*/
+ 
+ 
+
 /*=============================
 =            Menus            =
 =============================*/

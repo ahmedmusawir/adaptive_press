@@ -305,6 +305,11 @@ blockquote {
 	}
 }
 
+img {
+	width: 100%;
+	height: auto;
+}
+
 
 
 .aligncenter, .alignleft, .alignright, .alignnone {
@@ -857,10 +862,14 @@ blockquote {
 		.article-preview-image {
 			float: left;
 			margin-right: 2em;
+			width: 100%; //not working
+
 
 			img {
 				// border: 1px solid @border-color;
-				// .box-shadow(5px, 5px, 6px, @border-color);
+				.box-shadow(5px, 5px, 6px, @border-color); //not working
+				&.img-responsive(); //not working
+
 			}
 		}
 	} 
