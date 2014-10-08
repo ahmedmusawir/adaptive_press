@@ -470,6 +470,16 @@ img.centered {
 .comment-avatar img {
   float: left;
   margin: 0 1.5em 0 1em;
+  -webkit-border-radius: 50px;
+  -o-border-radius: 50px;
+  -moz-border-radius: 50px;
+  -ms-border-radius: 50px;
+  border-radius: 50px;
+  -webkit-background-clip: padding-box;
+  -o-background-clip: padding-box;
+  -moz-background-clip: padding;
+  -ms-background-clip: padding-box;
+  background-clip: padding-box;
 }
 .awaiting-moderation {
   font-style: italic;
@@ -816,6 +826,11 @@ img.centered {
 .articles article .article-preview-image {
   float: left;
   margin-right: 2em;
+  width: 100%;
+}
+.articles article .article-preview-image img {
+  -webkit-box-shadow: 5px 5px 6px #d7d7d7;
+  box-shadow: 5px 5px 6px #d7d7d7;
 }
 .articles .post-format-quote {
   float: right;
@@ -1299,8 +1314,7 @@ form input[type="submit"]:hover {
     float: none;
   }
   .comment-avatar img {
-    float: none;
-    clear: both;
+    float: left;
     margin: 0 1.5em 0 1em;
   }
   .commentslist header::before {

@@ -95,6 +95,70 @@ if ( function_exists( 'register_sidebar')) {
 
 /*-----  End of Register Sidebars  ------*/
 
+/*====================================================
+=            Function to display comments            =
+====================================================*/
+
+function adaptive_comments( $comment, $args, $depth ) {
+	$GLOBAL[ 'comment' ] = $comment;
+
+	if ( get_comment_type() == 'pingback' || get_comment_type() == 'trackback' ) : ?>
+
+		<li class="pingback" id="comment-<?php comment_ID();  ?>">
+			<article <?php comment_class('clearfix'); ?>>
+				<header>
+					<h5><?php _e( 'Pingback:', 'adaptive-framework' ); ?></h5>
+					<p><?php edit_comment_link(); ?></p>
+				</header>
+
+				<p><?php comment_author_link(); ?></p>
+			</article>
+		</li>
+
+	<?php elseif ( get_comment_type() == 'comment' ) : ?>
+
+		<li id="comment-<?php comment_ID(); ?>">
+			<article <?php comment_class( 'clearfix' ); ?>>
+				<header>
+					<h5><?php comment_author_link(); ?></h5>
+					<p><span>on <?php comment_date(); ?> <?php comment_time(); ?> - </span>
+					<?php comment_reply_link( array_merge( $args, array('depth' => $depth, 'max_depth' => $args['max_depth'])) ); ?>
+					</p>
+				</header>
+
+				<figure class="comment-avatar">
+					
+					<?php 
+						$avatar_size = 80;
+
+						if ( $comment->comment_parent != 0 ) {
+							$avatar_size = 64;
+						}
+
+						echo get_avatar( $comment, $avatar_size );
+
+					?>
+
+				</figure>
+
+				<?php if ( $comment->comment_approved == '0') : ?>
+
+				<p class="awaiting-moderation">Your comment is awaiting moderation</p>
+
+				<?php endif; ?>
+
+				<?php comment_text(); ?>
+
+			</article>
+		<!-- </li> WP Closes it by itself ... IMPORTANT!!-->
+
+	<?php  endif;	
+}
+
+/*-----  End of Function to display comments  ------*/
+
+
+
 
 
 

@@ -305,13 +305,6 @@ blockquote {
 	}
 }
 
-img {
-	width: 100%;
-	height: auto;
-}
-
-
-
 .aligncenter, .alignleft, .alignright, .alignnone {
 	padding: 3px;
 	background: white;
@@ -484,6 +477,7 @@ img {
 .comment-avatar img {
 	float: left;
 	margin: 0 1.5em 0 1em;
+	.round( 50px );
 }
 
 .awaiting-moderation {
@@ -868,7 +862,7 @@ img {
 			img {
 				// border: 1px solid @border-color;
 				.box-shadow(5px, 5px, 6px, @border-color); //not working
-				&.img-responsive(); //not working
+				// &.img-responsive(); //not working
 
 			}
 		}
@@ -1410,8 +1404,7 @@ form {
 	}
 
 	.comment-avatar img {
-		float: none;
-		clear: both;
+		float: left;
 		margin: 0 1.5em 0 1em;
 	}
 

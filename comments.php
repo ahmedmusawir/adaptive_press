@@ -26,8 +26,8 @@ if ( !comments_open() && !is_page() && post_type_supports( get_post_type(), 'com
 	</h3>
 
 	<ol class="commentslist">
-		<?php //wp_list_comments( 'callback=adaptive_comments' ); ?>
-		<?php wp_list_comments(); ?>
+		<?php wp_list_comments( 'callback=adaptive_comments' ); ?>
+		<?php //wp_list_comments(); ?>
 	</ol>
 
 	<?php if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) : ?>
