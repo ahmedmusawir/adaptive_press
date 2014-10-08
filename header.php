@@ -81,7 +81,7 @@
 
 		<div class="container">
 			<div class="row">
-				<div class="col-md-6 logo-container">
+				<div class="col-md-6 col-sm-6 logo-container">
 					<h1 class="logo">
 						<a href="<?php echo home_url(); ?>">
 							<!-- <img src="http://lorempixel.com/300/100/abstract" alt="Ad"> -->
@@ -91,7 +91,7 @@
 				</div>
 				<!-- end col-md-3 -->
 
-				<div class="col-md-6 clearfix top-ad">
+				<div class="col-md-6 col-sm-6 clearfix top-ad">
 					
 					<figure class="ad-block align-right">
 						<a href="">
@@ -104,7 +104,6 @@
 				<!-- end col-md-9 -->
 			</div>
 			<!-- end row -->
-
 			<hr />
 
 			<nav class="main-navigation clearfix">
