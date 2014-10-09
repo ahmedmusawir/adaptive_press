@@ -28,6 +28,14 @@
 
 
 						</header>
+						
+						<?php 
+
+						if ( current_user_can('edit_post', $post->ID )) {
+							edit_post_link( __('Edit This', 'adaptive-framework'), '<p class="article-meta-page">', '</p>' );
+
+							} 
+						?>
 
 						<?php if ( has_post_thumbnail() ) : ?>
 
