@@ -192,6 +192,19 @@ select {
   border: 2px solid #ff9999;
   color: black;
 }
+.addtional-content {
+  padding: 2em 0 0 3em;
+}
+.addtional-content h2 {
+  color: #005db7;
+  font-style: oblique;
+}
+.header-404 {
+  margin-top: 1em;
+}
+.header-404 h1 {
+  color: #ff6666;
+}
 /*===================================
 =            LESS MIXINS            =
 ===================================*/
@@ -1357,4 +1370,11 @@ form input[type="submit"]:hover {
 .page-header {
   padding-top: 1.5em;
   padding-bottom: 0;
+}
+.articles .additional-content {
+  padding: 2em 0 0 3em;
+}
+.articles .additional-content h2 {
+  color: #005db7;
+  font-style: oblique;
 }
