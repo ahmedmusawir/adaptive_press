@@ -203,6 +203,9 @@ add_filter( 'comment_form_default_fields', 'adaptive_custom_comment_fields' );
 
 /*-----  End of Custom Comments Form  ------*/
 
+/*==========  Custom Widget  ==========*/
+include_once ('functions/widget-ad-260.php');
+
 
 
 
