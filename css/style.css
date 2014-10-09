@@ -178,6 +178,20 @@ select {
   -ms-transition: opacity 0.8s ease-out;
   transition: opacity 0.8s ease-out;
 }
+.p-errors {
+  font-weight: bold;
+  color: #ff6666;
+}
+.p-errors input[type="text"],
+.p-errors input[type="email"],
+.p-errors input[type="url"] {
+  color: black;
+  border: 2px solid #ff9999;
+}
+.p-errors textarea {
+  border: 2px solid #ff9999;
+  color: black;
+}
 /*===================================
 =            LESS MIXINS            =
 ===================================*/
@@ -672,7 +686,7 @@ img.centered {
 .ad-block img {
   display: block;
   width: 100%;
-  height: 100%;
+  height: auto;
 }
 .top-ad {
   margin-bottom: 3px;
