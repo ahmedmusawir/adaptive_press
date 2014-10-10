@@ -92,13 +92,20 @@
 				<!-- end col-md-3 -->
 
 				<div class="col-md-6 col-sm-6 clearfix top-ad">
+
+				<?php 
+						//Get options 
+					$options = get_option( 'adaptive_custom_settings' );
+				?>
 					
+				<?php if ( $options['display_top_ad'] && $options['top_ad'] != '') : ?>
 					<figure class="ad-block align-right">
-						<a href="">
-							<img src="<?php echo IMAGES; ?>/top-ad-block.jpg" alt="Ad">
+						<a href="<?php echo $options['top_ad_link']; ?>">
+							<img src="<?php print $options['top_ad'] ?>" alt="Ad">
 						</a>
-						<!-- <a href=""><img src="images/demo/ad-468x60.gif" alt="Ad"></a> -->
 					</figure>
+
+				<?php endif; ?>
 				
 				</div>
 				<!-- end col-md-9 -->
