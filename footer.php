@@ -35,7 +35,7 @@
 
 <!-- JavaScript -->
 <!-- <script src="js/jquery.min.js" type="text/javascript" charset="utf-8"></script> -->
-<!-- <script src="js/script.js" type="text/javascript" charset="utf-8"></script> -->
+<!--<script src="<?php //echo THEMEROOT ;?>/js/myFitVid.js" type="text/javascript" charset="utf-8"></script> -->
 
 </body>
 </html>

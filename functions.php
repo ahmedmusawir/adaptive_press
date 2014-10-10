@@ -47,6 +47,31 @@ add_action( 'init', 'register_my_menus' );
 
 /*-----  End of Menus  ------*/
 
+/*=====================================
+=            Load JS Files            =
+=====================================*/
+
+    /**
+	 * Enqueue scripts
+	 *
+	 * @param string $handle Script name
+	 * @param string $src Script url
+	 * @param array $deps (optional) Array of script names on which this script depends
+	 * @param string|bool $ver (optional) Script version (used for cache busting), set to null to disable
+	 * @param bool $in_footer (optional) Whether to enqueue the script before </head> or before </body>
+	 */
+	function load_custom_scripts() {
+		wp_enqueue_script( 'menu_script', THEMEROOT . '/js/script.js', array( 'jquery' ), false, true);
+		wp_enqueue_script( 'my_video_script', THEMEROOT . '/js/myFitVid.js', array( 'jquery' ), false, true);
+	}
+
+	add_action( 'wp_enqueue_scripts', 'load_custom_scripts' );
+
+
+/*-----  End of Load JS Files  ------*/
+
+
+
 /*=========================================
 =            Register Sidebars            =
 =========================================*/
