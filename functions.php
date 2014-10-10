@@ -205,6 +205,7 @@ add_filter( 'comment_form_default_fields', 'adaptive_custom_comment_fields' );
 
 /*==========  Custom Widget  ==========*/
 include_once ('functions/widget-ad-260.php');
+include_once ('functions/shortcodes.php');
 
 
 

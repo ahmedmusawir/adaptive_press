@@ -26,7 +26,7 @@ class Adaptive_Ad_260_Widget extends WP_Widget {
 			'ad_link' => 'http://htmlfive.info'
 		);
 
-		$instance = wp_parse_args( $instance, $defaults );
+		$instance = wp_parse_args((array) $instance, $defaults );
 
 		?>
 		
@@ -91,7 +91,7 @@ class Adaptive_Ad_260_Widget extends WP_Widget {
 			echo $before_title . $title . $after_title;
 		}
 
-		echo '<ul class="">';
+		echo '<ul class="ad-260">';
 
 		if ($ad_img) : ?>
 

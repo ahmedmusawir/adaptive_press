@@ -1016,12 +1016,10 @@ img.centered {
 }
 .ad-125 li {
   width: 125px;
-  margin: 0 auto;
   display: inline-block;
 }
 .ad-260 li {
   width: 260px;
-  margin: 0 auto;
 }
 .ad-block {
   margin-bottom: 1em;
