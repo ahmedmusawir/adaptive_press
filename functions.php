@@ -1,4 +1,36 @@
 <?php 
+/**
+ * Creates a nicely formatted and more specific title element text
+ * for output in head of document, based on current view.
+ *
+ * @since Twenty Twelve 1.0
+ *
+ * @param string $title Default title text for current view.
+ * @param string $sep Optional separator.
+ * @return string Filtered title.
+ */
+function twentytwelve_wp_title( $title, $sep ) {
+	global $paged, $page;
+
+	if ( is_feed() )
+		return $title;
+
+	// Add the site name.
+	$title .= get_bloginfo( 'name' );
+
+	// Add the site description for the home/front page.
+	$site_description = get_bloginfo( 'description', 'display' );
+	if ( $site_description && ( is_home() || is_front_page() ) )
+		$title = "$title $sep $site_description";
+
+	// Add a page number if necessary.
+	if ( $paged >= 2 || $page >= 2 )
+		$title = "$title $sep " . sprintf( __( 'Page %s', 'twentytwelve' ), max( $paged, $page ) );
+
+	return $title;
+}
+add_filter( 'wp_title', 'twentytwelve_wp_title', 10, 2 );
+
 
 /*========================================
 =            Define Constants            =
@@ -22,6 +54,7 @@ define('IMAGES', THEMEROOT . '/images');
  if ( function_exists('add_theme_support') ) {
  	
  	add_theme_support('post-formats', array('link', 'quote', 'gallery') );
+ 	add_theme_support( 'automatic-feed-links' );
 
 	add_theme_support( 'post-thumbnails', array('post') );
 	set_post_thumbnail_size( 310, 310, true );
@@ -30,6 +63,22 @@ define('IMAGES', THEMEROOT . '/images');
  }
  
  /*-----  End of Add Theme Support for Post Thumbnails, Post Formats  ------*/
+
+ /*====================================
+ =            Localization            =
+ ====================================*/
+ 
+ function custom_theme_localization() {
+ 	$lang_dir = THEMEROOT . '/lang';
+
+ 	load_theme_textdomain( 'adaptive-framework', $lang_dir );
+ }
+
+ add_action( 'after_theme_setup', 'custom_theme_localization' );
+ 
+ /*-----  End of Localization  ------*/
+ 
+ 
  
  
 
@@ -66,6 +115,8 @@ add_action( 'init', 'register_my_menus' );
 	function load_custom_scripts() {
 		wp_enqueue_script( 'menu_script', THEMEROOT . '/js/script.js', array( 'jquery' ), false, true);
 		wp_enqueue_script( 'my_video_script', THEMEROOT . '/js/myFitVid.js', array( 'jquery' ), false, true);
+
+		if ( is_singular() ) wp_enqueue_script( "comment-reply" );
 	}
 
 	add_action( 'wp_enqueue_scripts', 'load_custom_scripts' );
@@ -88,48 +139,53 @@ if ( !isset($content_width) ) $content_width = 784;
 /*=========================================
 =            Register Sidebars            =
 =========================================*/
+function theme_sidebar_widgets_init() {
 
-if ( function_exists( 'register_sidebar')) {
+	if ( function_exists( 'register_sidebar')) {
 
-	register_sidebar (
-		array(
-			'name' => __( 'Main Sidebar', 'adaptive-framework'),
-			'id' => 'main-sidebar',
-			'description' => __( 'The main sidebar area', 'adaptive-framework'),
-			'before_widget' => '<div class="sidebar-widget">',
-			'after_widget' => '</div> <!-- end sidebar-widget -->',
-			'before_title' => '<h4>',
-			'after_title' => '</h4>'
-		)
+		register_sidebar (
+			array(
+				'name' => __( 'Main Sidebar', 'adaptive-framework'),
+				'id' => 'main-sidebar',
+				'description' => __( 'The main sidebar area', 'adaptive-framework'),
+				'before_widget' => '<div class="sidebar-widget">',
+				'after_widget' => '</div> <!-- end sidebar-widget -->',
+				'before_title' => '<h4>',
+				'after_title' => '</h4>'
+			)
 
-	);
+		);
 
-	register_sidebar (
-		array(
-			'name' => __( 'Left Footer', 'adaptive-framework'),
-			'id' => 'left-footer',
-			'description' => __( 'The left footer area', 'adaptive-framework'),
-			'before_widget' => '<div class="footer-sidebar-widget col-md-3 col-sm-6 col-xs-12">',
-			'after_widget' => '</div> <!-- end footer-sidebar-widget -->',
-			'before_title' => '<h4>',
-			'after_title' => '</h4>'
-		)
+		register_sidebar (
+			array(
+				'name' => __( 'Left Footer', 'adaptive-framework'),
+				'id' => 'left-footer',
+				'description' => __( 'The left footer area', 'adaptive-framework'),
+				'before_widget' => '<div class="footer-sidebar-widget col-md-3 col-sm-6 col-xs-12">',
+				'after_widget' => '</div> <!-- end footer-sidebar-widget -->',
+				'before_title' => '<h4>',
+				'after_title' => '</h4>'
+			)
 
-	);
+		);
 
-	register_sidebar (
-		array(
-			'name' => __( 'Right Footer', 'adaptive-framework'),
-			'id' => 'right-footer',
-			'description' => __( 'The right footer area', 'adaptive-framework'),
-			'before_widget' => '<div class="footer-sidebar-widget col-md-3 col-sm-6 col-xs-12">',
-			'after_widget' => '</div> <!-- end footer-sidebar-widget -->',
-			'before_title' => '<h4>',
-			'after_title' => '</h4>'
-		)
+		register_sidebar (
+			array(
+				'name' => __( 'Right Footer', 'adaptive-framework'),
+				'id' => 'right-footer',
+				'description' => __( 'The right footer area', 'adaptive-framework'),
+				'before_widget' => '<div class="footer-sidebar-widget col-md-3 col-sm-6 col-xs-12">',
+				'after_widget' => '</div> <!-- end footer-sidebar-widget -->',
+				'before_title' => '<h4>',
+				'after_title' => '</h4>'
+			)
 
-	);
+		);
+	}
+
 }
+
+add_action( 'widgets_init', 'theme_sidebar_widgets_init' );
 
 /*-----  End of Register Sidebars  ------*/
 

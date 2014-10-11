@@ -9,7 +9,8 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta name="author" content="content">
 	<meta name="description" content="<?php bloginfo('description'); ?>">
-	<title>Adaptive Blog</title>
+	<title><?php wp_title( '|', true, 'right' ); ?></title>
+
 
 	<!-- Bootstrap CSS -->
 	<!-- <link href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet"> -->
@@ -30,8 +31,10 @@
 	<!-- <link rel="apple-touch-icon" href="images/icons/apple-touch-icon.png"> -->
 	<!-- <link rel="apple-touch-icon" sizes="72/72" href="images/icons/apple-touch-icon-72x72.png"> -->
 	<!-- <link rel="apple-touch-icon" type="114/114" href="images/icons/apple-touch-icon-114x114.png"> -->
+	<?php wp_head(); ?>
+
 </head>
-<body>
+<body <?php body_class(); ?>>
 
 	<header class="main-header" id="top">
 

@@ -12,7 +12,8 @@ function adaptive_customize_register( $wp_customize ) {
 	//Add setting for checkbox
 	$wp_customize->add_setting('adaptive_custom_settings[display_top_ad]', array(
 		'default' => 0,
-		'type' => 'option'
+		'type' => 'option',
+		'sanitize_callback' => 'esc_url_raw'
 	));
 
 	//Add control for checkbox
@@ -26,7 +27,9 @@ function adaptive_customize_register( $wp_customize ) {
 	//Add setting for ad image
 	$wp_customize->add_setting('adaptive_custom_settings[top_ad]', array(
 		'default' => IMAGES . '/top-ad-block.jpg',
-		'type' => 'option'
+		'type' => 'option',
+		'sanitize_callback' => 'esc_url_raw'
+
 	));
 
 	//Add control for ad image
@@ -40,7 +43,9 @@ function adaptive_customize_register( $wp_customize ) {
 	//Add setting for ad link
 	$wp_customize->add_setting('adaptive_custom_settings[top_ad_link]', array(
 		'default' => 'http://htmlfive.info',
-		'type' => 'option'
+		'type' => 'option',
+		'sanitize_callback' => 'esc_url_raw'
+
 	));
 
 	//Add control for ad link

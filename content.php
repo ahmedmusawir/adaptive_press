@@ -33,7 +33,7 @@
 
 	<?php endif; ?>
 
-	<?php the_content( __('Read More &raquo;'), 'adaptive-framework' ); ?>
+	<?php the_content( __('Read More &raquo;', 'adaptive-framework' )); ?>
 
 </article>
 

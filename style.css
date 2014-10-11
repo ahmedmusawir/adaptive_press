@@ -1,7 +1,7 @@
 /*===================================================================================
 =            A WORDPRESS THEME            =
 
-Theme Name: Adaptive Blog
+Theme Name: Adaptive Blog Theme
 Theme URI: www.htmlfive.info
 Description: A clean Adaptive Wordpress theme made exclusively for Da Moose
 Version: 1.0
@@ -9,8 +9,12 @@ Author: Ahmed Musawir
 Author URI: http://www.etechcorner.net 
 License: GNU General Public License version 3.0
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
-Tags: 3 Column, Responsive, white, red, black, bootstrap, jQuery, 
+
 ==================================================================================*/
 
 /*@import url("css/bootstrap32.min.css");*/
 @import url("css/style.css");
+
+.sticky {}
+.gallery-caption {}
+.bypostauthor {}

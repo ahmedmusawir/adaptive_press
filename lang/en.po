@@ -1,0 +1,148 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Adaptive Press\n"
+"POT-Creation-Date: 2014-10-11 15:25+0800\n"
+"PO-Revision-Date: 2014-10-11 15:26+0800\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: en\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.6.9\n"
+"X-Poedit-Basepath: .\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-KeywordsList: __;-e;_n\n"
+"X-Poedit-SearchPath-0: .\n"
+
+#: category.php:15
+msgid "Showing posts from: "
+msgstr ""
+
+#: category.php:39 index.php:25 search.php:39 tag.php:39
+msgid "&larr; Older Posts"
+msgstr ""
+
+#: category.php:40 index.php:26 search.php:40 tag.php:40
+msgid "Newer Posts &rarr;"
+msgstr ""
+
+#: comments.php:4
+msgid "You cannot access this file dirctory."
+msgstr ""
+
+#: comments.php:25
+msgid "No Comments"
+msgstr ""
+
+#: comments.php:25
+msgid "One Comment"
+msgstr ""
+
+#: comments.php:25
+msgid "% Comments"
+msgstr ""
+
+#: comments.php:37
+msgid "&larr; Older Comments"
+msgstr ""
+
+#: comments.php:38
+msgid "Newer Comments &rarr;"
+msgstr ""
+
+#: content-gallery.php:48
+#, php-format
+msgid "This gallery %s photo."
+msgstr ""
+
+#: content.php:36
+msgid "Read More &raquo;"
+msgstr ""
+
+#: functions.php:28
+#, php-format
+msgid "Page %s"
+msgstr ""
+
+#: functions.php:76 functions_before_content_size.php:41
+msgid "Top Menu"
+msgstr ""
+
+#: functions.php:77 functions_before_content_size.php:42
+msgid "Main Menu"
+msgstr ""
+
+#: functions.php:132 functions_before_content_size.php:84
+msgid "Main Sidebar"
+msgstr ""
+
+#: functions.php:134 functions_before_content_size.php:86
+msgid "The main sidebar area"
+msgstr ""
+
+#: functions.php:145 functions_before_content_size.php:97
+msgid "Left Footer"
+msgstr ""
+
+#: functions.php:147 functions_before_content_size.php:99
+msgid "The left footer area"
+msgstr ""
+
+#: functions.php:158 functions_before_content_size.php:110
+msgid "Right Footer"
+msgstr ""
+
+#: functions.php:160 functions_before_content_size.php:112
+msgid "The right footer area"
+msgstr ""
+
+#: functions.php:264 functions_before_content_size.php:212
+msgid "Name"
+msgstr ""
+
+#: functions.php:267 functions_before_content_size.php:215
+msgid "Email"
+msgstr ""
+
+#: functions.php:270 functions_before_content_size.php:218
+msgid "Website"
+msgstr ""
+
+#: functions/adaptive-customizer.php:6
+msgid "Top Ad"
+msgstr ""
+
+#: functions/adaptive-customizer.php:7
+msgid "Allows you to upload an ad banner to display on the top of the page"
+msgstr ""
+
+#: functions/adaptive-customizer.php:21
+msgid "Display Top Ad?"
+msgstr ""
+
+#: functions/adaptive-customizer.php:37
+msgid "Upload the Top Banner Image"
+msgstr ""
+
+#: functions/adaptive-customizer.php:53
+msgid "Link to target website"
+msgstr ""
+
+#: functions/widget-ad-260.php:16
+msgid "Displays a single 260x120 ad block"
+msgstr ""
+
+#: functions/widget-ad-260.php:24
+msgid "Ad 260x120"
+msgstr ""
+
+#: page-archives.php:30 page-contact.php:128 page-full-width.php:33
+#: page.php:25 single.php:35
+msgid "Edit This"
+msgstr ""
+
+#: tag.php:15
+msgid "Showing tag archive for: "
+msgstr ""
