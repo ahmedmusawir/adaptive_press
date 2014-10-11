@@ -24,9 +24,7 @@ define('IMAGES', THEMEROOT . '/images');
  	add_theme_support('post-formats', array('link', 'quote', 'gallery') );
 
 	add_theme_support( 'post-thumbnails', array('post') );
-	set_post_thumbnail_size( 310, 310, true );
-	add_image_size( 'custom-blog-image', 784, 350 );
-
+	set_post_thumbnail_size( 210, 210, true );
  }
  
  /*-----  End of Add Theme Support for Post Thumbnails, Post Formats  ------*/
@@ -72,16 +70,6 @@ add_action( 'init', 'register_my_menus' );
 
 
 /*-----  End of Load JS Files  ------*/
-
-/*===============================================================
-=            Set the max width of the uploaded media            =
-===============================================================*/
-
-if ( !isset($content_width) ) $content_width = 784;
-
-/*-----  End of Set the max width of the uploaded media  ------*/
-
-
 
 
 

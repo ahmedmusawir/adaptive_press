@@ -25,12 +25,8 @@
 
 		<figure class="article-preview-image">
 			<a href="<?php the_permalink(); ?>">
-				<?php 
-					$attr = array(
-						'class' => 'img-responsive'
-					); 
-				?>
-				<?php the_post_thumbnail( 'full', $attr ); ?>	
+				
+				<?php the_post_thumbnail(); ?>	
 
 			</a>
 		</figure>
